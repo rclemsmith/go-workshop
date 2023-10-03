@@ -34,7 +34,7 @@ func main() {
 }
 
 func getStatusCode(endpoint string){
-	defer wg.Done()
+	 
 	res,err := http.Get(endpoint)
 	
 	if err != nil {
@@ -46,7 +46,7 @@ func getStatusCode(endpoint string){
 		fmt.Printf("%d Status Code for website for %s\n", res.StatusCode,endpoint)
 	}
 
-	
+	wg.Done()
 }
 
 func greeter(s string) {
